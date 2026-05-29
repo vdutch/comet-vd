@@ -56,8 +56,8 @@ services:
       - '-c'
       - max_connections=100
     volumes:
-      # CORREÇÃO: Apontado para a pasta /data correta do Postgres
-      - 'postgres_data:/var/lib/postgresql/data'
+      # CORREÇÃO: Usar apenas a raiz /var/lib/postgresql conforme exigido pela v18+
+      - 'postgres_data:/var/lib/postgresql'
     healthcheck:
       test:
         - CMD-SHELL
